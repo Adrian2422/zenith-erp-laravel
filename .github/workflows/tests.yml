@@ -62,5 +62,8 @@ jobs:
           restore-keys: ${{ runner.os }}-phpstan-
       - run: mkdir -p /tmp/phpstan
 
-      - name: Tests
+      - name: Pest tests
         run: composer test
+
+      - name: Vitest tests
+        run: npm run test
