@@ -39,6 +39,16 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     /**
+     * Get the columns that should receive a unique identifier.
+     *
+     * @return array<int, string>
+     */
+    public function uniqueIds(): array
+    {
+        return ['uuid'];
+    }
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
@@ -49,15 +59,5 @@ class User extends Authenticatable implements MustVerifyEmail
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    /**
-     * Get the columns that should receive a unique identifier.
-     *
-     * @return array<int, string>
-     */
-    public function uniqueIds(): array
-    {
-        return ['uuid'];
     }
 }

@@ -1,10 +1,10 @@
-import { wayfinder } from '@laravel/vite-plugin-wayfinder';
-import tailwindcss from '@tailwindcss/vite';
-import vue from '@vitejs/plugin-vue';
-import laravel from 'laravel-vite-plugin';
-import { defineConfig } from 'vite';
-import ui from '@nuxt/ui/vite';
-import path from 'path';
+import { wayfinder } from '@laravel/vite-plugin-wayfinder'
+import ui from '@nuxt/ui/vite'
+import tailwindcss from '@tailwindcss/vite'
+import vue from '@vitejs/plugin-vue'
+import laravel from 'laravel-vite-plugin'
+import path from 'path'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [
@@ -33,26 +33,25 @@ export default defineConfig({
       ui: {
         colors: {
           primary: 'green',
-          neutral: 'zinc'
-        }
+          neutral: 'zinc',
+        },
       },
       autoImport: {
         vueTemplate: true,
-        dirs: ["resources/js/composables", "resources/js/utils"],
+        dirs: ['resources/js/composables', 'resources/js/utils'],
         imports: [
-          "vue",
-          "@vueuse/core",
+          'vue',
+          '@vueuse/core',
           {
-            "@inertiajs/vue3": ["router", "useForm", "usePage", "useRemember", "Head"],
+            '@inertiajs/vue3': ['router', 'useForm', 'usePage', 'useRemember', 'Head'],
           },
         ],
-
-      }
-    })
+      },
+    }),
   ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './resources/js'),
     },
   },
-});
+})

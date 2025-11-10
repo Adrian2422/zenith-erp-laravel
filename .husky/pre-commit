@@ -1,0 +1,4 @@
+./vendor/bin/pint --repair
+npm run lint
+composer run test
+npm run test

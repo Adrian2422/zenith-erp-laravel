@@ -17,7 +17,7 @@ class RolePermissionSeeder extends Seeder
     {
         $admin = Role::create(['name' => 'admin']);
         $manager = Role::create(['name' => 'manager']);
-        $employee = Role::create(['name' => 'employee']);
+        Role::create(['name' => 'employee']);
 
         $permissions = [
             'view users', 'create users', 'edit users', 'delete users', 'lock user',
