@@ -11,8 +11,4 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@v4
         with:
-          release-type: simple
-          package-name: "klocadrian/zenith-erp"
-          changelog-path: CHANGELOG.md
-          bump-minor-pre-major: true
-          bump-patch-for-minor-pre-major: true
+          release-type: php
