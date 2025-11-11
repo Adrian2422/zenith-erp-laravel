@@ -1,12 +1,10 @@
 <?php
 
-declare(strict_types=1);
-
 use App\Models\User;
 use Laravel\Fortify\Features;
 
 test('security page is displayed', function (): void {
-    if ( ! Features::canManageTwoFactorAuthentication()) {
+    if (! Features::canManageTwoFactorAuthentication()) {
         $this->markTestSkipped('Two-factor authentication is not enabled.');
     }
 

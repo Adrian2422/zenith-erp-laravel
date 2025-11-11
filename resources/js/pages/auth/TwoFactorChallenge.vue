@@ -42,7 +42,7 @@
 
     <div class="space-y-6">
       <template v-if="!showRecoveryInput">
-        <Form v-slot="{ errors, processing, clearErrors }" v-bind="store.form()" class="space-y-4" reset-on-error @error="code = []">
+        <Form v-bind="store.form()" class="space-y-4" reset-on-error @error="code = []" #default="{ errors, processing, clearErrors }">
           <input type="hidden" name="code" :value="codeValue" />
 
           <UFormField name="code" :error="errors.code" :ui="{ root: 'text-center' }">
@@ -65,7 +65,7 @@
       </template>
 
       <template v-else>
-        <Form v-slot="{ errors, processing, clearErrors }" v-bind="store.form()" class="space-y-4" reset-on-error>
+        <Form v-bind="store.form()" class="space-y-4" reset-on-error #default="{ errors, processing, clearErrors }">
           <UFormField name="recovery_code" :error="errors.recovery_code">
             <UInput type="text" placeholder="Enter recovery code" :autofocus="showRecoveryInput" class="w-full" required />
           </UFormField>

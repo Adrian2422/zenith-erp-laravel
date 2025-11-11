@@ -1,20 +1,16 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers\Auth;
 
-use function __;
-
 use App\Http\Controllers\Controller;
-
-use function back;
-
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Inertia\Inertia;
 use Inertia\Response;
+
+use function __;
+use function back;
 
 class PasswordResetLinkController extends Controller
 {
@@ -36,7 +32,7 @@ class PasswordResetLinkController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'email' => ['required', 'email'],
+            'email' => 'required|email',
         ]);
 
         Password::sendResetLink(

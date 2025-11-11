@@ -42,11 +42,11 @@
 
       <Form
         v-if="isRecoveryCodesVisible && recoveryCodesList.length"
-        v-slot="{ processing }"
         v-bind="regenerateRecoveryCodes.form()"
         method="post"
         :options="{ preserveScroll: true }"
         @success="fetchRecoveryCodes"
+        #default="{ processing }"
       >
         <UButton color="secondary" type="submit" :disabled="processing" icon="i-lucide-refresh-cw"> Regenerate Codes </UButton>
       </Form>
@@ -60,7 +60,7 @@
           <div v-if="!recoveryCodesList.length" class="space-y-2">
             <div v-for="n in 8" :key="n" class="h-4 animate-pulse rounded bg-muted/20" />
           </div>
-          <div v-for="(code, index) in recoveryCodesList" v-else :key="index">
+          <div v-else v-for="(code, index) in recoveryCodesList" :key="index">
             {{ code }}
           </div>
         </div>

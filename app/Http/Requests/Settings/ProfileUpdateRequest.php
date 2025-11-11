@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Requests\Settings;
 
 use App\Models\User;
@@ -25,7 +23,7 @@ class ProfileUpdateRequest extends FormRequest
                 'lowercase',
                 'email',
                 'max:255',
-                Rule::unique(User::class)->ignore($this->user()->uuid, 'uuid'),
+                Rule::unique(User::class)->ignore($this->user()->id),
             ],
         ];
     }

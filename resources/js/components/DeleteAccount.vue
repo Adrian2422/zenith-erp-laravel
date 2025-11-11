@@ -16,14 +16,14 @@
 
     <template #body>
       <Form
-        v-slot="{ errors, processing, reset, clearErrors }"
         v-bind="ProfileController.destroy.form()"
         reset-on-success
+        @error="() => passwordInput?.inputRef?.focus()"
         :options="{
           preserveScroll: true,
         }"
         class="space-y-6"
-        @error="() => passwordInput?.inputRef?.focus()"
+        v-slot="{ errors, processing, reset, clearErrors }"
       >
         <UFormField name="password" :error="errors.password">
           <UInput ref="passwordInput" type="password" placeholder="Password" class="w-full" />

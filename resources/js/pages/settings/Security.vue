@@ -35,7 +35,6 @@
 
     <UPageCard title="Password" description="Confirm your current password before setting a new one." variant="subtle">
       <Form
-        v-slot="{ errors, processing }"
         v-bind="PasswordController.update.form()"
         :options="{
           preserveScroll: true,
@@ -43,6 +42,7 @@
         reset-on-success
         :reset-on-error="['password', 'password_confirmation', 'current_password']"
         class="flex max-w-xs flex-col gap-4"
+        v-slot="{ errors, processing }"
         @success="handleSuccess"
       >
         <UFormField name="current_password" :error="errors.current_password">
@@ -61,7 +61,7 @@
       </Form>
     </UPageCard>
 
-    <TwoFactor :requires-confirmation="requiresConfirmation" :two-factor-enabled="twoFactorEnabled" />
+    <TwoFactor :requiresConfirmation="requiresConfirmation" :twoFactorEnabled="twoFactorEnabled" />
 
     <UPageCard
       title="Account"

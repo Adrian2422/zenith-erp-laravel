@@ -21,9 +21,9 @@
     </div>
 
     <Form
-      v-slot="{ errors, processing }"
       v-bind="AuthenticatedSessionController.store.form()"
       :reset-on-success="['password']"
+      v-slot="{ errors, processing }"
       class="flex flex-col gap-6"
     >
       <div class="grid gap-6">

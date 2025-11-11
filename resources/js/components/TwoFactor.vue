@@ -29,7 +29,7 @@
         application on your phone.
       </p>
       <div>
-        <TwoFactorSetupModal :requires-confirmation="requiresConfirmation" :two-factor-enabled="twoFactorEnabled" />
+        <TwoFactorSetupModal :requiresConfirmation="requiresConfirmation" :twoFactorEnabled="twoFactorEnabled" />
       </div>
     </div>
 
@@ -44,7 +44,7 @@
       <TwoFactorRecoveryCodes />
 
       <div class="relative inline">
-        <Form v-slot="{ processing }" v-bind="disable.form()">
+        <Form v-bind="disable.form()" #default="{ processing }">
           <UButton color="error" icon="i-lucide-shield-ban" type="submit" :disabled="processing"> Disable 2FA </UButton>
         </Form>
       </div>

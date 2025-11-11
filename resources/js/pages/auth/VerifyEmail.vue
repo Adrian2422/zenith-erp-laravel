@@ -18,7 +18,7 @@
       A new verification link has been sent to the email address you provided during registration.
     </div>
 
-    <Form v-slot="{ processing }" v-bind="EmailVerificationNotificationController.store.form()" class="space-y-6 text-center">
+    <Form v-bind="EmailVerificationNotificationController.store.form()" class="space-y-6 text-center" v-slot="{ processing }">
       <UButton :loading="processing" type="submit">Resend verification email</UButton>
 
       <TextLink :href="logout()" as="button" class="mx-auto block text-sm font-medium text-primary"> Log out </TextLink>
