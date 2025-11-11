@@ -1,7 +1,7 @@
 {
   "$schema": "https://getcomposer.org/schema.json",
   "name": "klocadrian/zenith-erp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "project",
   "description": "A modular enterprise resource planning system built with Laravel 12, Vue 3, and Inertia.js — covering HR, production, inventory, and more.",
   "keywords": [
