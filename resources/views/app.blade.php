@@ -13,7 +13,9 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=public-sans:400,500,600,700" rel="stylesheet" />
 
-        @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
+        @if(!env('CI'))
+            @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
+        @endif
         @inertiaHead
     </head>
     <body>
