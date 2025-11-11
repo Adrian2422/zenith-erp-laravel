@@ -19,7 +19,7 @@
     </div>
 
     <div class="space-y-6">
-      <Form v-bind="PasswordResetLinkController.store.form()" v-slot="{ errors, processing }">
+      <Form v-slot="{ errors, processing }" v-bind="PasswordResetLinkController.store.form()">
         <UFormField name="email" :error="errors.email" label="Email address">
           <UInput type="email" class="w-full" autocomplete="off" placeholder="email@example.com" autofocus required />
         </UFormField>
