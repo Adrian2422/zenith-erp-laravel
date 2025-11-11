@@ -17,14 +17,14 @@
     <Head title="Reset password" />
 
     <Form
+      v-slot="{ errors, processing }"
       v-bind="NewPasswordController.store.form()"
       :transform="(data) => ({ ...data, token, email })"
       :reset-on-success="['password', 'password_confirmation']"
-      v-slot="{ errors, processing }"
     >
       <div class="grid gap-6">
         <UFormField name="email" :error="errors.email" label="Email">
-          <UInput type="email" class="w-full" autocomplete="email" readonly v-model="inputEmail" />
+          <UInput v-model="inputEmail" type="email" class="w-full" autocomplete="email" readonly />
         </UFormField>
 
         <UFormField name="password" :error="errors.password" label="Password">

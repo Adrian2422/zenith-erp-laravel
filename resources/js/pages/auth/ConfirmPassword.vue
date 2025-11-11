@@ -8,7 +8,7 @@
   <AuthLayout title="Confirm your password" description="This is a secure area of the application. Please confirm your password before continuing.">
     <Head title="Confirm password" />
 
-    <Form v-bind="store.form()" reset-on-success v-slot="{ errors, processing }">
+    <Form v-slot="{ errors, processing }" v-bind="store.form()" reset-on-success>
       <div class="space-y-6">
         <UFormField name="password" :error="errors.password" label="Password">
           <UInput type="password" class="w-full" autocomplete="current-password" autofocus required />

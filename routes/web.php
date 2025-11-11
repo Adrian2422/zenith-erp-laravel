@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -11,5 +13,5 @@ Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::get('customers', fn () => Inertia::render('Customers'))->name('customers');
 });
 
-require __DIR__.'/settings.php';
-require __DIR__.'/auth.php';
+require __DIR__ . '/settings.php';
+require __DIR__ . '/auth.php';

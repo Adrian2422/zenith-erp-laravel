@@ -74,13 +74,13 @@
 <template>
   <UModal
     v-model:open="open"
+    :ui="{ content: 'sm:max-w-md divide-none', title: 'font-normal', header: 'block!' }"
     @after:leave="resetModalState"
     @update:open="handleUpdateOpen"
-    :ui="{ content: 'sm:max-w-md divide-none', title: 'font-normal', header: 'block!' }"
   >
     <UButton v-if="hasSetupData" icon="i-lucide-shield-check"> Continue Setup </UButton>
 
-    <Form v-else v-bind="enable.form()" #default="{ processing }">
+    <Form v-else v-slot="{ processing }" v-bind="enable.form()">
       <UButton type="submit" :disabled="processing" icon="i-lucide-shield-check"> Enable 2FA </UButton>
     </Form>
 
@@ -106,13 +106,13 @@
                   <Loader2 class="size-6 animate-spin" />
                 </div>
                 <div v-else class="relative z-10 overflow-hidden border border-muted p-5">
-                  <div v-html="qrCodeSvg" class="flex aspect-square size-full items-center justify-center" />
+                  <div class="flex aspect-square size-full items-center justify-center" v-html="qrCodeSvg" />
                 </div>
               </div>
             </div>
 
             <div class="flex w-full items-center space-x-5">
-              <UButton @click="handleModalNextStep" block>
+              <UButton block @click="handleModalNextStep">
                 {{ modalConfig.buttonText }}
               </UButton>
             </div>
@@ -149,7 +149,7 @@
         </template>
 
         <template v-else>
-          <Form v-bind="confirm.form()" reset-on-error @finish="code = []" @success="open = false" v-slot="{ errors, processing }">
+          <Form v-slot="{ errors, processing }" v-bind="confirm.form()" reset-on-error @finish="code = []" @success="open = false">
             <input type="hidden" name="code" :value="codeValue" />
             <div class="relative w-full space-y-8">
               <UFormField name="code" :error="errors?.confirmTwoFactorAuthentication?.code" :ui="{ root: 'text-center' }">
@@ -162,9 +162,9 @@
                   color="neutral"
                   variant="subtle"
                   class="w-auto flex-1"
-                  @click="showVerificationStep = false"
                   :disabled="processing"
                   block
+                  @click="showVerificationStep = false"
                 />
                 <UButton
                   label="Confirm"
