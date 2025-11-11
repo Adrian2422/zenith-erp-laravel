@@ -60,7 +60,6 @@ jobs:
           echo "SESSION_DRIVER=array" >> .env
           echo "QUEUE_CONNECTION=sync" >> .env
           echo "MAIL_MAILER=log" >> .env
-          echo "VITE_ENABLED=false" >> .env
           echo "BROADCAST_CONNECTION=log" >> .env
           echo "LARAVEL_BYPASS_ENV_CHECK=1" >> .env
 
