@@ -1,4 +1,9 @@
 {
+  "name": "zenith-erp",
+  "version": "1.0.0",
+  "description": "A modular enterprise resource planning system built with Laravel 12, Vue 3, and Inertia.js — covering HR, production, inventory, and more.",
+  "author": "Zenith ERP Team",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {

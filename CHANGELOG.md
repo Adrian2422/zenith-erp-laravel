@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Adrian2422/zenith-erp-laravel/compare/v1.0.0...v1.1.0) (2025-11-11)
+
+
+### Features
+
+* release type change to php ([#5](https://github.com/Adrian2422/zenith-erp-laravel/issues/5)) ([5621acd](https://github.com/Adrian2422/zenith-erp-laravel/commit/5621acd1eff3262789c6ff5d5bf35f76629609dc))
+
 ## 1.0.0 (2025-11-11)
 
 
